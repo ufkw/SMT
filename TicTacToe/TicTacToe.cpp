@@ -5,6 +5,9 @@
 #include <vector>
 using namespace std;
 
+/// <summary>
+/// Constructor.
+/// </summary>
 TicTacToe::TicTacToe() : board_length(3), board_size(9)
 {
 	// initialize board
@@ -37,7 +40,7 @@ void TicTacToe::MakeMove(int row, int col, char player)
 }
 
 /// <summary>
-/// 
+/// Basic algorithm to play tic tac toe between two humans. Used in test app.
 /// </summary>
 void TicTacToe::Play()
 {
@@ -57,7 +60,6 @@ void TicTacToe::Play()
 		player = player2;
 		cout << "Player 2 is X and Player 1 is O. Player 2 goes first!\n";
 	}
-
 
 	int turn = 0;
 	char last_player = player;
@@ -113,9 +115,9 @@ bool TicTacToe::IsMoveValid(int row, int col)
 }
 
 /// <summary>
-/// 
+/// Checks if board is full. Can be used by interface.
 /// </summary>
-/// <returns></returns>
+/// <returns>true if full, false otherwise</returns>
 bool TicTacToe::IsBoardFull()
 {
 	for (int i = 0; i < board_length; i++)
@@ -218,7 +220,8 @@ void TicTacToe::DisplayBoard()
 		for (int j = 0; j < board_length; j++)
 		{
 			std::cout << board[i][j];
-			if (j < board_length - 1) {
+			if (j < board_length - 1)
+			{
 				std::cout << " | ";
 			}
 		}
